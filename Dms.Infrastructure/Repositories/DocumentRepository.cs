@@ -43,7 +43,12 @@ public class DocumentRepository : IDocumentRepository
 
     public async Task UpdateAsync(Document document)
     {
-        _context.Documents.Update(document);
+        var entry = _context.Entry(document);
+        if (entry.State == EntityState.Detached)
+        {
+            _context.Documents.Attach(document);
+            entry.State = EntityState.Modified;
+        }
         await _context.SaveChangesAsync();
     }
 

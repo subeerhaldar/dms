@@ -39,6 +39,11 @@ public class DocumentService : IDocumentService
 
     public async Task UpdateDocumentAsync(Document document, string userId)
     {
+        // Get the original document to create version with current values
+        var originalDocument = await _repository.GetByIdAsync(document.Id);
+        if (originalDocument == null)
+            throw new ArgumentException("Document not found");
+
         // Create a version before updating
         var versions = await _repository.GetVersionsAsync(document.Id);
         var nextVersionNumber = versions.Any() ? versions.Max(v => v.VersionNumber) + 1 : 1;
@@ -47,16 +52,20 @@ public class DocumentService : IDocumentService
         {
             DocumentId = document.Id,
             VersionNumber = nextVersionNumber,
-            FileName = document.FileName,
-            ContentType = document.ContentType,
-            FileData = document.FileData,
-            CreatedBy = document.ModifiedBy ?? userId
+            FileName = originalDocument.FileName,
+            ContentType = originalDocument.ContentType,
+            FileData = originalDocument.FileData,
+            CreatedBy = originalDocument.ModifiedBy ?? userId
         };
         await _repository.AddVersionAsync(version);
 
-        document.ModifiedBy = userId;
-        document.ModifiedDate = DateTime.UtcNow;
-        await _repository.UpdateAsync(document);
+        // Update the original document with new values
+        originalDocument.FileName = document.FileName;
+        originalDocument.ContentType = document.ContentType;
+        originalDocument.FileData = document.FileData;
+        originalDocument.ModifiedBy = userId;
+        originalDocument.ModifiedDate = DateTime.UtcNow;
+        await _repository.UpdateAsync(originalDocument);
     }
 
     public async Task DeleteDocumentAsync(Guid id)

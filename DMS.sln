@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dms.Core", "Dms.Core\Dms.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dms.Infrastructure", "Dms.Infrastructure\Dms.Infrastructure.csproj", "{53D915EA-13BA-4D67-A809-9FF28F2DCE83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dms.Api.Tests", "Dms.Api.Tests\Dms.Api.Tests.csproj", "{D6ED4731-9BFB-4C82-AF67-40BE4B18CA52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{53D915EA-13BA-4D67-A809-9FF28F2DCE83}.Release|x64.Build.0 = Release|Any CPU
 		{53D915EA-13BA-4D67-A809-9FF28F2DCE83}.Release|x86.ActiveCfg = Release|Any CPU
 		{53D915EA-13BA-4D67-A809-9FF28F2DCE83}.Release|x86.Build.0 = Release|Any CPU
+		{D6ED4731-9BFB-4C82-AF67-40BE4B18CA52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6ED4731-9BFB-4C82-AF67-40BE4B18CA52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6ED4731-9BFB-4C82-AF67-40BE4B18CA52}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D6ED4731-9BFB-4C82-AF67-40BE4B18CA52}.Debug|x64.Build.0 = Debug|Any CPU
+		{D6ED4731-9BFB-4C82-AF67-40BE4B18CA52}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D6ED4731-9BFB-4C82-AF67-40BE4B18CA52}.Debug|x86.Build.0 = Debug|Any CPU
+		{D6ED4731-9BFB-4C82-AF67-40BE4B18CA52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6ED4731-9BFB-4C82-AF67-40BE4B18CA52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6ED4731-9BFB-4C82-AF67-40BE4B18CA52}.Release|x64.ActiveCfg = Release|Any CPU
+		{D6ED4731-9BFB-4C82-AF67-40BE4B18CA52}.Release|x64.Build.0 = Release|Any CPU
+		{D6ED4731-9BFB-4C82-AF67-40BE4B18CA52}.Release|x86.ActiveCfg = Release|Any CPU
+		{D6ED4731-9BFB-4C82-AF67-40BE4B18CA52}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
