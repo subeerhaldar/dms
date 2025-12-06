@@ -1,0 +1,35 @@
+# .NET Core
+bin/
+obj/
+*.user
+*.db
+*.db-shm
+*.db-wal
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.tmp
+*.log
+
+# Rider
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# NuGet
+packages/
+*.nupkg
+
+# EF Core
+Migrations/
+
+# Appsettings
+appsettings.Development.json
+
+# Logs
+logs/
+*.log
